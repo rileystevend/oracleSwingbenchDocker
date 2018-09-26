@@ -38,6 +38,7 @@ COPY ./wallet_AUSTINLAB100 ./wallet_AUSTINLAB100
 
 # install a SB workload schema into the ATP instance
 RUN cd swingbench/bin
+
 RUN ./oewizard -cf ~/wallet_SBATP.zip \
            -cs sbatp_medium \
            -ts DATA \
@@ -71,6 +72,7 @@ RUN ./charbench -c ../configs/SOE_Server_Side_V2.xml \
             -uc 128 \
             -di SQ,WQ,WA \
             -rt 0:0.30
+            
 #set env variables
 ENV ORACLE_BASE /opt/oracle/lib/instantclient_12_1
 ENV LD_LIBRARY_PATH /opt/oracle/lib/instantclient_12_1
